@@ -34,36 +34,33 @@
             <div class="col-md-7">
                 
                 <div class="signin-info">
-                    <div class="logopanel">
-                        <h1><span>[</span> bracket <span>]</span></h1>
-                    </div><!-- logopanel -->
+                    <div class="logopanel"><img src="images/logog.png" width="425" height="153"></div><!-- logopanel -->
                 
                     <div class="mb20"></div>
                 
                     <h5><strong>Panel de Admnistracion Nemesis Dealers</strong></h5>
                     <ul>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Fully Responsive Layout</li>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> HTML5/CSS3 Valid</li>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Retina Ready</li>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> WYSIWYG CKEditor</li>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> and much more...</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> GPS Dealer Manager</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Comunicacion con usuarios</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Soporte a GPS Tracker</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Reportes</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Control de flota</li>
                     </ul>
                     <div class="mb20"></div>
-                    <strong>Not a member? <a href="signup.html">Sign Up</a></strong>
                 </div><!-- signin0-info -->
             
             </div><!-- col-sm-7 -->
             
             <div class="col-md-5">
                 
-                <form method="post" action="index.html">
-                    <h4 class="nomargin">Sign In</h4>
-                    <p class="mt5 mb20">Login to access your account.</p>
+                <form method="post" action="panel.php">
+                    <h4 class="nomargin">Ingresar</h4>
+                    <p class="mt5 mb20">Ingreso a su cuenta.</p>
                 
-                    <input type="text" class="form-control uname" placeholder="Username" />
-                    <input type="password" class="form-control pword" placeholder="Password" />
-                    <a href=""><small>Forgot Your Password?</small></a>
-                    <button class="btn btn-success btn-block">Sign In</button>
+                    <input type="text" class="form-control uname" placeholder="Usuario" />
+                    <input type="password" class="form-control pword" placeholder="Contraseña" />
+                    <a href=""><small>Olvido su acceso?</small></a>
+                    <button class="btn btn-success btn-block">Ingreso</button>
                     
                 </form>
             </div><!-- col-sm-5 -->
@@ -75,7 +72,7 @@
                 &copy; 2014. All Rights Reserved. Nemesis GPS Tracker
             </div>
             <div class="pull-right">
-                Created By: <a href="../../../index.html" target="_blank">Globaltronic Panama S.A</a>
+                Created By: <a href="http://www.nemesisla.com" target="_blank">Globaltronic Panama S.A</a>
             </div>
         </div>
         

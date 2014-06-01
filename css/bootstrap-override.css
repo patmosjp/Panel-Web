@@ -195,16 +195,16 @@ h4, .h4 {
 }
 
 .btn-success {
-   background-color: #1CAF9A;
-   border-color: #17a08c;
+   background-color: #384796;
+   border-color: #384796;
 }
 
 .btn-success:hover,
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
-   background-color: #17a08c;
-   border-color: #119380;
+   background-color: #0059B2;
+   border-color: #0059B2;
 }
 
 .btn-white {
