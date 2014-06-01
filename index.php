@@ -38,7 +38,7 @@ include ("inc/connect.php");
   <div class="leftpanel">
     
     <div class="logopanel">
-        <h1><span>[</span> bracket <span>]</span></h1>
+        <img src="images/logo.png" width="230" height="83">
     </div><!-- logopanel -->
     
     <div class="leftpanelinner">
