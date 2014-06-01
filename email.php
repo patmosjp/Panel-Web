@@ -1,3 +1,6 @@
+<?
+include ("inc/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,9 +59,12 @@
         </div>
       
       <h5 class="sidebartitle">Navegacion</h5>
+      <? include ("menu.php") ?>
+      <!--
       <ul class="nav nav-pills nav-stacked nav-bracket">
         <li><a href="index.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
         <li class="active"><a href="email.php"><span class="pull-right badge badge-success">2</span><i class="fa fa-envelope-o"></i> <span>Mensajes</span></a></li>
+      -->
         <!--
         <li class="nav-parent"><a href=""><i class="fa fa-edit"></i> <span>Forms</span></a>
           <ul class="children">
@@ -85,7 +91,7 @@
           </ul>
         </li>
         -->
-        <li><a href="tables.php"><i class="fa fa-th-list"></i> <span>Dispositivos</span></a></li>
+        <!--<li><a href="tables.php"><i class="fa fa-th-list"></i> <span>Dispositivos</span></a></li>-->
         <!--
         <li><a href="maps.html"><i class="fa fa-map-marker"></i> <span>Maps</span></a></li>
         -->
@@ -120,7 +126,7 @@
             </ul>
         </li>
         -->
-      </ul>
+      <!--</ul>-->
       
       <!--
       <div class="infosummary">
