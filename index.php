@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-  <title>Panel de Admnistracion Nemesis Dealers</title>
+  <title>Panel de Administración | Nemesis GPS Tracker Dealers</title>
 
   <link href="css/style.default.css" rel="stylesheet">
 
@@ -38,7 +38,7 @@
                 
                     <div class="mb20"></div>
                 
-                    <h5><strong>Panel de Admnistracion Nemesis Dealers</strong></h5>
+                    <h5><strong>Panel de Administración | Nemesis GPS Tracker Dealers</strong></h5>
                     <ul>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> GPS Dealer Manager</li>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> Comunicacion con usuarios</li>

@@ -14,7 +14,7 @@ include ("inc/connect.php");
   <meta name="author" content="">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-  <title>Panel de Admnistracion Nemesis Dealers</title>
+  <title>Panel de Administración | Nemesis GPS Tracker Dealers</title>
 
   <link href="css/style.default.css" rel="stylesheet">
   <link href="css/prettyPhoto.css" rel="stylesheet">
