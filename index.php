@@ -34,7 +34,7 @@
             <div class="col-md-7">
                 
                 <div class="signin-info">
-                    <div class="logopanel"><img src="images/logog.png" width="425" height="153"></div><!-- logopanel -->
+                    <div class="logopanel"><img src="images/logog.png" ></div><!-- logopanel -->
                 
                     <div class="mb20"></div>
                 
