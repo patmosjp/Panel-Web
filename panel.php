@@ -77,7 +77,7 @@ include ("inc/connect.php");
       <a class="menutoggle"><i class="fa fa-bars"></i></a>
       
       <form class="searchform" action="panel.php" method="post">
-        <input type="text" class="form-control" name="keyword" placeholder="Buscar aqui..." />
+        <input type="text" class="form-control" name="keyword" placeholder="Buscar dispositivo" />
       </form>
       
       <div class="header-right">
@@ -277,7 +277,7 @@ include ("inc/connect.php");
     </div><!-- headerbar -->
         
     <div class="pageheader">
-      <h2><i class="fa fa-home"></i> Dashboard <span>Subtitulos aqui...</span></h2>
+      <h2><i class="fa fa-home"></i> Dashboard <span>Control de dispositivos Nemesis GPS Tracker</span></h2>
       <div class="breadcrumb-wrapper">
         <span class="label">Tu estas aqui:</span>
         <ol class="breadcrumb">
