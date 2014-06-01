@@ -24,7 +24,7 @@ body {
 
 body.notfound,
 body.signin {
-   background: #e4e7ea;
+   background: #FFF;
 }
 
 input,select,textarea {
@@ -478,7 +478,7 @@ strong {
 }
 
 .nav-bracket > li > a {
-   color: #8f939e;
+   color: #FFF;
    padding: 7px 10px;
 }
 

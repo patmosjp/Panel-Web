@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-  <title>Bracket Responsive Bootstrap3 Admin</title>
+  <title>Panel de Admnistracion Nemesis Dealers</title>
 
   <link href="css/style.default.css" rel="stylesheet">
 
@@ -40,7 +40,7 @@
                 
                     <div class="mb20"></div>
                 
-                    <h5><strong>Welcome to Bracket Bootstrap 3 Template!</strong></h5>
+                    <h5><strong>Panel de Admnistracion Nemesis Dealers</strong></h5>
                     <ul>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> Fully Responsive Layout</li>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> HTML5/CSS3 Valid</li>
@@ -72,10 +72,10 @@
         
         <div class="signup-footer">
             <div class="pull-left">
-                &copy; 2014. All Rights Reserved. Bracket Bootstrap 3 Admin Template
+                &copy; 2014. All Rights Reserved. Nemesis GPS Tracker
             </div>
             <div class="pull-right">
-                Created By: <a href="../../../index.html" target="_blank">ThemePixels</a>
+                Created By: <a href="../../../index.html" target="_blank">Globaltronic Panama S.A</a>
             </div>
         </div>
         
