@@ -62,7 +62,7 @@ include ("inc/connect.php");
       <? include ("menu.php") ?>
       <!--
       <ul class="nav nav-pills nav-stacked nav-bracket">
-        <li><a href="index.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="panel.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
         <li class="active"><a href="email.php"><span class="pull-right badge badge-success">2</span><i class="fa fa-envelope-o"></i> <span>Mensajes</span></a></li>
       -->
         <!--
@@ -390,7 +390,7 @@ include ("inc/connect.php");
       <div class="breadcrumb-wrapper">
         <span class="label">Tu estas aqui:</span>
         <ol class="breadcrumb">
-          <li><a href="index.php">Bracket</a></li>
+          <li><a href="panel.php">Bracket</a></li>
           <li class="active">Mensajes</li>
         </ol>
       </div>

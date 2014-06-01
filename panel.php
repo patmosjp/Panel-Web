@@ -76,7 +76,7 @@ include ("inc/connect.php");
       
       <a class="menutoggle"><i class="fa fa-bars"></i></a>
       
-      <form class="searchform" action="index.php" method="post">
+      <form class="searchform" action="panel.php" method="post">
         <input type="text" class="form-control" name="keyword" placeholder="Buscar aqui..." />
       </form>
       
