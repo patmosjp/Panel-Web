@@ -53,7 +53,7 @@
             
             <div class="col-md-5">
                 
-                <form method="post" action="panel.php">
+                <form method="post" action="/power/inus.php">
                     <h4 class="nomargin">Ingresar</h4>
                     <p class="mt5 mb20">Ingreso a su cuenta.</p>
                 
