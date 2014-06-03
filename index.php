@@ -1,3 +1,14 @@
+<?php
+
+// Inialize session
+session_start();
+
+// Delete certain session
+unset($_SESSION['appms']);
+// Delete all session variables
+session_destroy();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,12 +64,12 @@
             
             <div class="col-md-5">
                 
-                <form method="post" action="/power/inus.php">
+                <form method="post" action="power/inus.php">
                     <h4 class="nomargin">Ingresar</h4>
                     <p class="mt5 mb20">Ingreso a su cuenta.</p>
                 
-                    <input type="text" class="form-control uname" placeholder="Usuario" />
-                    <input type="password" class="form-control pword" placeholder="Contraseña" />
+                    <input type="text" class="form-control uname" placeholder="Usuario" id="user"  name="user"/>
+                    <input type="password" class="form-control pword" placeholder="Contraseña"  id="pass"  name="pass"/>
                     <a href=""><small>Olvido su acceso?</small></a>
                     <button class="btn btn-success btn-block">Ingreso</button>
                     
