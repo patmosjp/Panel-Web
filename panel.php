@@ -56,8 +56,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
             <div class="media userlogged">
                 <img alt="" src="images/photos/loggeduser.png" class="media-object">
                 <div class="media-body">
-                    <h4>John Doe</h4>
-                    <span>"Life is so..."</span>
+                    <h4><?=$_GET['us']?></h4>
                 </div>
             </div>
           
@@ -66,7 +65,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
               <li><a href="profile.php"><i class="fa fa-user"></i> <span> Mi Perfil </span></a></li>
               <li><a href=""><i class="fa fa-cog"></i> <span> Configuracion </span></a></li>
               <li><a href=""><i class="fa fa-question-circle"></i> <span>Ayuda</span></a></li>
-              <li><a href="signout.php"><i class="fa fa-sign-out"></i> <span>Salir</span></a></li>
+              <li><a href="index.php"><i class="fa fa-sign-out"></i> <span>Salir</span></a></li>
             </ul>
         </div>
       
@@ -83,10 +82,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
     <div class="headerbar">
       
       <a class="menutoggle"><i class="fa fa-bars"></i></a>
-      
-      <form class="searchform" action="panel.php" method="post">
-        <input type="text" class="form-control" name="keyword" placeholder="Buscar dispositivo" />
-      </form>
+  
       
       <div class="header-right">
         <ul class="headermenu">
@@ -263,15 +259,13 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
           <li>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <img src="images/photos/loggeduser.png" alt="" />
-                John Doe
-                <span class="caret"></span>
+                <img src="images/photos/loggeduser.png" alt="" /><?=$_GET['us']?><span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
                 <li><a href="profile.php"><i class="glyphicon glyphicon-user"></i> Mi Perfil </a></li>
                 <li><a href="profile.php#"><i class="glyphicon glyphicon-cog"></i> Configuracion </a></li>
                 <li><a href="profile.php#"><i class="glyphicon glyphicon-question-sign"></i> Ayuda </a></li>
-                <li><a href="signin.php"><i class="glyphicon glyphicon-log-out"></i> Salir </a></li>
+                <li><a href="index.php"><i class="glyphicon glyphicon-log-out"></i> Salir </a></li>
               </ul>
             </div>
           </li>
