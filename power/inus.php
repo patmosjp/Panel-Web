@@ -18,8 +18,12 @@ $_SESSION["appms"]=$ids;
 $pass=md5($ps);
 $pass=strtoupper($pass);
 
+//#ed. seccion de configuracion de variable de menu activo.------------
+$menuactivo = 1;
+//---------------------------------------------------------------------
+
 if($us["pass"]==$pass){
-header ("Location: ../panel.php?us=".$us["users"]);
+header ("Location: ../panel.php?us=".$us["users"]."&mnact=".$menuactivo);
 }else{
 header ("Location: ../index.php?err=2");
 }
