@@ -9,10 +9,23 @@ if (!isset($_SESSION['appms'])) {
 header('Location: http://registro.nemesistracker.com/wpanel/');
 }
 
+$usid=$_GET['us'];
+
+$serialsql = "SELECT * FROM dbo.consola_user_dealers where users='".$usid."'";
+$params = array();
+$options =array("Scrollable" => SQLSRV_CURSOR_KEYSET);
+$consulta = sqlsrv_query($conn, $serialsql, $params, $options);
+$c = sqlsrv_fetch_array($consulta, SQLSRV_FETCH_ASSOC);
+
+$dvsql = "SELECT      a.id as id, a.TermSN as TermSN,b.CarID as CarID, a.GroupID as GroupID, b.CarNum as CarNum, a.Fecha as Fecha, c.GroupName as GroupName  FROM dbo.consola_dev_dealers AS a INNER JOIN
+                      dbo.gps_term AS b ON a.TermSN = b.TermSN INNER JOIN
+                      dbo.gps_group AS c ON b.GroupID = c.id WHERE  a.Codigo ='".$c['codigo']."'";
+$params = array();
+$options =array("Scrollable" => SQLSRV_CURSOR_KEYSET);
+$cdx = sqlsrv_query($conn, $dvsql, $params, $options);
+
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +38,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
   <title>Panel de Administración | Nemesis GPS Tracker Dealers</title>
 
   <link href="css/style.default.css" rel="stylesheet">
-  <link href="css/prettyPhoto.css" rel="stylesheet">
+  <link href="css/jquery.datatables.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -259,7 +272,8 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
           <li>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <img src="images/photos/loggeduser.png" alt="" /><?=$_GET['us']?><span class="caret"></span>
+                <img src="images/photos/loggeduser.png" alt="" />
+                <?=$_GET['us']?><span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
                 <li><a href="profile.php"><i class="glyphicon glyphicon-user"></i> Mi Perfil </a></li>
@@ -283,8 +297,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
       <div class="breadcrumb-wrapper">
         <span class="label">Tu estas aqui:</span>
         <ol class="breadcrumb">
-          <li><a href="index.html">Bracket</a></li>
-          <li class="active">Dashboard</li>
+          <li><a href="index.html">Dashboard</a></li>
         </ol>
       </div>
     </div>
@@ -297,47 +310,39 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
           
           <div class="mb30"></div>
           
-          <h5 class="subtitle">About</h5>
+          <h5 class="subtitle">Bienvenido</h5>
           <p class="mb30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat... <a href="">Show More</a></p>
           
-          <h5 class="subtitle">Connect</h5>
+          <h5 class="subtitle">Soporte GPS</h5>
           <ul class="profile-social-list">
-            <li><i class="fa fa-twitter"></i> <a href="">twitter.com/eileensideways</a></li>
-            <li><i class="fa fa-facebook"></i> <a href="">facebook.com/eileen</a></li>
-            <li><i class="fa fa-youtube"></i> <a href="">youtube.com/eileen22</a></li>
-            <li><i class="fa fa-linkedin"></i> <a href="">linkedin.com/4ever-eileen</a></li>
-            <li><i class="fa fa-pinterest"></i> <a href="">pinterest.com/eileen</a></li>
-            <li><i class="fa fa-instagram"></i> <a href="">instagram.com/eiside</a></li>
+            <li><i class="fa fa-email"></i> <a href="">soporte@nemesistracker.com</a></li>
           </ul>
           
           <div class="mb30"></div>
           
-          <h5 class="subtitle">Address</h5>
+          <h5 class="subtitle">Centro de servicio</h5>
           <address>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            Costa del Este <br>
+            Calle 1 Edificio Oasis Bussines Piso 3<br>
+            <abbr title="Phone">P:</abbr> (507) 3948312
           </address>
           
         </div><!-- col-sm-3 -->
         <div class="col-sm-9">
           
           <div class="profile-header">
-            <h2 class="profile-name">Eileen Sideways</h2>
-            <div class="profile-location"><i class="fa fa-map-marker"></i> San Francisco, California, USA</div>
-            <div class="profile-position"><i class="fa fa-briefcase"></i> Software Engineer at <a href="">SomeCompany, Inc.</a></div>
+            <h2 class="profile-name">Nemesis GPS Tracker</h2>
+            <div class="profile-location"><i class="fa fa-map-marker"></i> Ciudad de Panama, Panama</div>
             
             <div class="mb20"></div>
             
-            <button class="btn btn-success mr5"><i class="fa fa-user"></i> Follow</button>
-            <button class="btn btn-white"><i class="fa fa-envelope-o"></i> Message</button>
           </div><!-- profile-header -->
           
           <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified nav-profile">
-          <li class="active"><a href="profile.html#activities" data-toggle="tab"><strong>Activities</strong></a></li>
-          <li><a href="profile.html#followers" data-toggle="tab"><strong>Followers</strong></a></li>
-          <li><a href="profile.html#following" data-toggle="tab"><strong>Following</strong></a></li>
+          <li class="active"><a href="profile.html#activities" data-toggle="tab"><strong>Control de GPS</strong></a></li>
+          <li><a href="profile.html#followers" data-toggle="tab"><strong>Administrar mi flota</strong></a></li>
+          <li><a href="profile.html#following" data-toggle="tab"><strong>Soporte</strong></a></li>
           <li><a href="profile.html#events" data-toggle="tab"><strong>My Events</strong></a></li>
         </ul>
         
@@ -345,152 +350,63 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
         <div class="tab-content">
           <div class="tab-pane active" id="activities">
             <div class="activity-list">
+
               
               <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/user1.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Ray Sin</strong> started following <strong>Eileen Sideways</strong>. <br />
-                  <small class="text-muted">Yesterday at 3:30pm</small>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> posted a new blog. <br />
-                  <small class="text-muted">Today at 3:18pm</small>
-                      
-                  <div class="media blog-media">
-                    <a class="pull-left" href="profile.html#">
-                      <img class="media-object" src="images/photos/media5.png" alt="" />
-                    </a>
-                    <div class="media-body">
-                      <h4 class="media-title"><a href="">Ut Enim Ad Minim Veniam</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="">Read more</a></p>
-                    </div>
-                  </div><!-- media -->
-                  
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/user2.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Chris Anthemum</strong> started following <strong>Eileen Sideways</strong>. <br />
-                  <small class="text-muted">2 days ago at 8:30am</small>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> uploaded <a href="">5 photos</a>. <br />
-                  <small class="text-muted">5 days ago at 12:30pm</small>
-                  
-                  <ul class="uploadphoto-list">
-                    <li><a href="images/photos/media1.jpg" data-rel="prettyPhoto"><img src="images/photos/media1.jpg" class="img-responsive" alt="" /></a></li>
-                    <li><a href="images/photos/media2.png" data-rel="prettyPhoto"><img src="images/photos/media2.png" class="img-responsive" alt="" /></a></li>
-                    <li><a href="images/photos/media3.png" data-rel="prettyPhoto"><img src="images/photos/media3.png" class="img-responsive" alt="" /></a></li>
-                  </ul>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/user4.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Frank Furter</strong> started following <strong>Eileen Sideways</strong>. <br />
-                  <small class="text-muted">6 days ago at 8:15am</small>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> posted a new note. <br />
-                  <small class="text-muted">6 days ago at 6:18am</small>
-                  <h4 class="media-title"><a href="">Consectetur Adipisicing Elit</a></h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="">Read more</a></p>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> posted a new blog. <br />
-                  <small class="text-muted">December 25 at 3:18pm</small>
-                      
-                  <div class="media blog-media">
-                    <a class="pull-left" href="profile.html#">
-                      <img class="media-object" src="images/photos/media4.png" alt="" />
-                    </a>
-                    <div class="media-body">
-                      <h4 class="media-title"><a href="">Ut Enim Ad Minim Veniam</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="">Read more</a></p>
-                    </div>
-                  </div><!-- media -->
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> added new photo. <br />
-                  <small class="text-muted">December 24 at 1:30pm</small>
-                  <div class="mb20"></div>
-                  <a href="images/photos/media6.png" data-rel="prettyPhoto" class="img-single"><img src="images/photos/media6.png" class="img-responsive" alt="" /></a>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/user5.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Weno Carasbong</strong> started following <strong>Eileen Sideways</strong>. <br />
-                  <small class="text-muted">December 15 at 3:30pm</small>
-                </div>
-              </div><!-- media -->
-              
-              <div class="media act-media">
-                <a class="pull-left" href="profile.html#">
-                  <img class="media-object act-thumb" src="images/photos/userprofile.png" alt="" />
-                </a>
-                <div class="media-body act-media-body">
-                  <strong>Eileen Sideways</strong> posted a new blog. <br />
-                  <small class="text-muted">December 15 at 3:18pm</small>
-                      
-                  <div class="media blog-media">
-                    <a class="pull-left" href="profile.html#">
-                      <img class="media-object" src="images/photos/media7.png" alt="" />
-                    </a>
-                    <div class="media-body">
-                      <h4 class="media-title"><a href="">Ut Enim Ad Minim Veniam</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="">Read more</a></p>
-                    </div>
-                  </div><!-- media -->
-                  
-                </div>
+
+        <div class="panel-body">
+          <div class="clearfix mb30"></div>
+          <div class="table-responsive">
+          <table class="table" id="table2">
+              <thead>
+                 <tr>
+                    <th>Id</th>
+                    <th>Propietario</th>
+                    <th>Placa De Auto</th>
+                    <th>Fecha De Registro</th>
+                    <th>Kilometraje</th>
+                 </tr>
+              </thead>
+              <tbody>
+<?
+
+$Yr=date("Y");
+$mes=date("m");
+$dia=date("j");
+
+while($d = sqlsrv_fetch_array($cdx, SQLSRV_FETCH_ASSOC)){
+
+$dia=2;  
+
+$kmsql ="select max(Mileage) as Km from dbo.gps_position_".$Yr."_".$mes."_".$dia." where CarID='".$d['CarID']."'";
+$params = array();
+$options =array("Scrollable" => SQLSRV_CURSOR_KEYSET);
+$ckm = sqlsrv_query($conn, $kmsql, $params, $options);
+$km = sqlsrv_fetch_array($ckm, SQLSRV_FETCH_ASSOC); 
+$kilometro=substr($km['Km'], 0, -1);
+$kcar=strlen($kilometro);
+if($kcar > 4){$pc=100;}else{$pc=10;}
+$kilometro=($kilometro/$pc);
+
+
+?>
+                 <tr class="odd gradeX">
+                    <td><?=$d['id']?></td>
+                    <td><?=$d['GroupName']?></td>
+                    <td><?=$d['CarNum']?></td>
+                    <td><?=$d['Fecha']?></td>
+                    <td><?=$kilometro?></td>
+                 </tr>
+<?}?>
+              </tbody>
+           </table>
+          </div><!-- table-responsive -->
+          
+        </div><!-- panel-body -->
+ 
               </div><!-- media -->
               
             </div><!-- activity-list -->
-            
-            <button class="btn btn-white btn-block">Show More</button>
 
           </div>
           <div class="tab-pane" id="followers">
@@ -1151,6 +1067,7 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
 <script src="js/jquery.cookies.js"></script>
 
 <script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.datatables.min.js"></script>
 <script src="js/holder.js"></script>
 
 <script src="js/custom.js"></script>
@@ -1165,6 +1082,43 @@ header('Location: http://registro.nemesistracker.com/wpanel/');
         jQuery(this).attr('rel', jQuery(this).data('rel'));
     });
     
+  });
+</script>
+<script>
+  jQuery(document).ready(function() {
+    
+    jQuery('#table1').dataTable();
+    
+    jQuery('#table2').dataTable({
+      "sPaginationType": "full_numbers"
+    });
+    
+    // Chosen Select
+    jQuery("select").chosen({
+      'min-width': '100px',
+      'white-space': 'nowrap',
+      disable_search_threshold: 10
+    });
+    
+    // Delete row in a table
+    jQuery('.delete-row').click(function(){
+      var c = confirm("Continue delete?");
+      if(c)
+        jQuery(this).closest('tr').fadeOut(function(){
+          jQuery(this).remove();
+        });
+        
+        return false;
+    });
+    
+    // Show aciton upon row hover
+    jQuery('.table-hidaction tbody tr').hover(function(){
+      jQuery(this).find('.table-action-hide a').animate({opacity: 1});
+    },function(){
+      jQuery(this).find('.table-action-hide a').animate({opacity: 0});
+    });
+  
+  
   });
 </script>
 
